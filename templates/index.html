@@ -1,0 +1,42 @@
+
+<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}"/>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+
+<head>
+</head>
+<body>
+<div class="main_div">
+  <div class="top_band">
+  <ul>
+    <li class="top_band_squares" id="bar-chart">
+
+    </li>
+    <li class="top_band_squares" id="pie-chart">
+
+    </li>
+    <li class="top_band_squares" id="area-chart">
+
+    </li>
+    <li class="top_band_squares" id="scatter-plot">
+
+    </li>
+  </ul>
+  </div>
+  <div>
+    <div class="main-title">
+      autocharts
+    </div>
+    <div class="mini-title">
+      by feather i/o
+    </div>
+  </div>
+</div>
+</body>
+
+<script src="{{ url_for('static', filename='scripts/home_page.js')}}"></script>
