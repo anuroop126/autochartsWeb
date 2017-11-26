@@ -84,11 +84,11 @@ $(function() {
     .attr("ry", "20px")
     .attr("d", arc);
 
-// $("#pie-chart").hover(
-//   function(){foreground.transition()
-//     .duration(750)
-//     .call(arcTween, Math.random() * pi);}
-// );
+  // $("#pie-chart").hover(
+  //   function(){foreground.transition()
+  //     .duration(750)
+  //     .call(arcTween, Math.random() * pi);}
+  // );
   setInterval(function() {
     foreground.transition()
       .duration(750)
@@ -154,10 +154,10 @@ $(function() {
   //code for area chart starts here!
 
   var area_svg = d3.select("#area-chart").append("svg")
-  .attr("width", width)
-  .attr("height", height)
-.append("g");
-var area_data= [{
+    .attr("width", width)
+    .attr("height", height)
+    .append("g");
+  var area_data = [{
       x: 0,
       y: 35,
     },
@@ -174,50 +174,60 @@ var area_data= [{
       y: 20,
     },
     {
-          x: 4,
-          y: 35,
-        },
-        {
-          x: 5,
-          y: 40,
-        },
-        {
-          x: 6,
-          y: 25,
-        },
+      x: 4,
+      y: 35,
+    },
+    {
+      x: 5,
+      y: 40,
+    },
+    {
+      x: 6,
+      y: 25,
+    },
   ];
-  make_area_graph(area_data, width, height,area_svg,true);
+  make_area_graph(area_data, width, height, area_svg, true);
 
   setInterval(function() {
     var sample_data = []
     for (var i = 0; i < 7; i++) {
-      var x={}
+      var x = {}
       x['x'] = i;
       x['y'] = Math.floor(Math.random() * (40 - 10 + 1) + 1)
       sample_data.push(x)
     }
-    make_area_graph(sample_data, width, height,area_svg,false);
+    make_area_graph(sample_data, width, height, area_svg, false);
   }, 3000);
 
   //code for scatterplot starts here!
   var scp_svg = d3.select("#scatter-plot").append("svg")
-                  .attr("width",width)
-                  .attr("height",height)
-  var x_data=[10,20,40,60]
-  var y_data=[10,20,40,60]
-  make_scatter_plot(scp_svg,x_data,y_data,width,height,true)
+    .attr("width", width)
+    .attr("height", height)
+  scp_svg.append("line")
+    .attr("stroke", "white")
+    .attr("x1", 0)
+    .attr("x2", width)
+    .attr("y1", 0)
+    .attr("y2", 0)
+  scp_svg.append("text")
+    .attr("x", 0)
+    .attr("y", 0)
+    .text(0)
+  var x_data = [10, 20, 40, 60]
+  var y_data = [10, 20, 40, 60]
+  make_scatter_plot(scp_svg, x_data, y_data, width, height, true)
   setInterval(function() {
     var sample_data_x = []
     var sample_data_y = []
     for (var i = 0; i < Math.floor(Math.random() * (30 + 1) + 15); i++) {
-      sample_data_x.push(Math.floor(Math.random() * (80 - 10 + 1) + 5))
-      sample_data_y.push(Math.floor(Math.random() * (80 - 10 + 1) + 5))
+      sample_data_x.push(Math.floor(Math.random() * (100 - 10 + 1) + 5))
+      sample_data_y.push(Math.floor(Math.random() * (100 - 10 + 1) + 5))
     }
-    make_scatter_plot(scp_svg,sample_data_x,sample_data_y,width,height,true)
+    make_scatter_plot(scp_svg, sample_data_x, sample_data_y, width, height, true)
   }, 3000);
 });
 
-function make_area_graph(data,width, height, svg, initial) {
+function make_area_graph(data, width, height, svg, initial) {
   var x = d3.scale.linear()
     .domain([0, d3.max(data, function(d) {
       return d.x;
@@ -237,47 +247,72 @@ function make_area_graph(data,width, height, svg, initial) {
     .y1(function(d) {
       return y(d.y);
     });
-    // .attr("transform", "translate(" + (width) + "," + margin.top + ")");
-if(initial){
-svg.append("path")
-    .datum(data)
-    .attr("class", "area")
-    .attr("d", area)
-    .attr("opacity","0,5")
+  // .attr("transform", "translate(" + (width) + "," + margin.top + ")");
+  if (initial) {
+    svg.append("path")
+      .datum(data)
+      .attr("class", "area")
+      .attr("d", area)
+      .attr("opacity", "0,5")
     // .attr("fill","none")
     // .attr("stroke","white")
     // .attr("stroke-width","2px")
-  }else{
+  } else {
     svg.selectAll("path")
-    .datum(data)
-    .transition()
-    .duration(2500)
-    .attr("d", area);}
+      .datum(data)
+      .transition()
+      .duration(2500)
+      .attr("d", area);
+  }
 }
 
-function make_scatter_plot(scp_svg,x_data,y_data,width,height,initial){
+function make_scatter_plot(scp_svg, x_data, y_data, width, height, initial) {
+  var formatPercent = d3.format(".3s");
   var x = d3.scale.linear()
     .domain([0, d3.max(x_data)])
-    .range([0, width-10]);
+    .range([0, width - 10]);
 
   var y = d3.scale.linear()
     .domain([0, d3.max(y_data)])
-    .range([height-10, 0]);
+    .range([height - 10, 0]);
+  var avg = 0
+  for (var i = 0; i < y_data.length; i++) {
+    avg += y_data[i]
+  }
+  avg /= y_data.length
+  var avg_line = scp_svg.selectAll("line")
+    .transition()
+    .duration(1000)
+    .attr("x1", 0)
+    .attr("x2", width)
+    .attr("y1", y(avg))
+    .attr("y2", y(avg))
+
+  var svg_text = scp_svg.selectAll("text").transition().ease("quad-out").duration(2000).delay(0)
+    .attr("y", y(avg))
+    .tween("text", function(d) {
+      var i = d3.interpolate(d3.select(this).text(),avg);
+      return function(t) {
+        d3.select(this).text(formatPercent(i(t)));
+      };
+    });
 
   var temp = scp_svg
-  .selectAll("circle")
-  .data(x_data);
+    .selectAll("circle")
+    .data(x_data);
   temp.exit().remove();
   temp.enter()
-  .append("circle")
-  // .attr("fill","green")
-  temp.attr("r",0)
-  .transition()
-  .duration(1000)
-  .attr("r",8)
-  .attr("cx",function(d){return x(d);})
-  .attr("cy",function(d,i){return y(y_data[i]);})
-  ;
+    .append("circle")
+  temp.attr("r", 0)
+    .transition()
+    .duration(1000)
+    .attr("r", 8)
+    .attr("cx", function(d) {
+      return x(d);
+    })
+    .attr("cy", function(d, i) {
+      return y(y_data[i]);
+    });
 
 }
 // mongod --dbpath=C:/Program Files/MongoDB/Server/3.4/bin
