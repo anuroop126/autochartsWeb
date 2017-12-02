@@ -53,7 +53,7 @@ body {
 
 .container {
 	position: relative;
-	width: 1350px;
+	width: 960px;
 	margin: 0 auto;
 	-webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -93,7 +93,6 @@ body {
 	-moz-box-sizing: border-box;
 	-o-box-sizing: border-box;
 	width:23%;
-	height:31%;
 	margin:1%;
 	display:none;
 	float:left;
@@ -103,15 +102,14 @@ body {
 	.portfolio-wrapper {
 		overflow:hidden;
 		position: relative !important;
-		background: rgba(0,0,0,0);
+		background: "rgba(0,0,0,1)";
 		cursor:pointer;
 		border-style: solid;
-    border-color: #fff;
+        border-color: #fff;
 		border-radius: 20px;
 	}
 
 	.portfolio img {
-    padding-left: 30px;
 		max-width:100%;
 		position: relative;
 		top:0;
