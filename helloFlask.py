@@ -8,5 +8,6 @@ def home():
 	return render_template("index.html")
 
 @app.route('/demos')
-def showDemo():
-	return render_template("demo_page.html")
+@app.route('/demos/<category>')
+def showDemo(category="Composition"):
+	return render_template("demo_page.html",category=category)

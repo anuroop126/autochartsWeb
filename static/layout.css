@@ -92,7 +92,8 @@ body {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-o-box-sizing: border-box;
-	width:23%;
+	width:31%;
+	height:31%;
 	margin:1%;
 	display:none;
 	float:left;
@@ -102,10 +103,10 @@ body {
 	.portfolio-wrapper {
 		overflow:hidden;
 		position: relative !important;
-		background: #666;
+		background: rgba(0,0,0,0);
 		cursor:pointer;
 		border-style: solid;
-        border-color: #fff;
+    border-color: #fff;
 		border-radius: 20px;
 	}
 
