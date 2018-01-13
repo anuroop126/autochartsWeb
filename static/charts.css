@@ -1,0 +1,92 @@
+body {
+  background-size: 100%;
+  background-image: url(../static/assets/demo_bg.png);
+  background-attachment: fixed;
+  color: rgba(204, 242, 255, 0.6);
+  font-family: 'Didact Gothic', sans-serif;
+}
+
+.login .pane {
+  text-align: center;
+  background-color: rgba(1, 1, 24, 0.7);
+  top: 0;
+  left: 0;
+  bottom: 20;
+  right: 0;
+  width: fill;
+  height: 300px;
+  overflow-y: hidden;
+  padding: 22px 32px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+
+}
+.login {
+  padding-top: 10px;
+}
+
+.module {
+  width: 100%;
+  float: left;
+  height: inherit;
+}
+.sub-heading {
+  font-family: 'Righteous', cursive;
+  color: rgba(204, 242, 255, 1);
+  text-align: center;
+  padding-bottom: 10px;
+  font-weight: bold;
+  width: 100%;
+  font-size: 2em;
+  float: left;
+}
+.heading {
+  /*padding-bottom: 20px;*/
+  font-family: 'Righteous', cursive;
+  color: rgba(204, 242, 255, 1);
+  text-align: center;
+  padding-bottom: 10px;
+  font-weight: bold;
+  width: 100%;
+  font-size: 2em;
+  float: left;
+}
+
+.bar-code {
+  float: right;
+  width: 75%;
+}
+
+.bar-svg {
+  float: left;
+  /*position: absolute;*/
+  width: 20%;
+}
+
+.login .misc {
+  /*position: absolute; */
+  left: 0;
+  width: 100%;
+}
+
+.login footer {
+  background: #555;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.login .misc, .login .misc a {
+  color: white;
+}
+
+.login footer a:hover {
+  color: #9CF;
+}
+
+.data-body {
+  color: white ;
+  font-weight: bold;
+}
