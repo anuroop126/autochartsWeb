@@ -61,15 +61,19 @@ html * {
 /* ============================================================= */
 /* styles for index.html */
 
+.index-body {
+  background-image: url(../static/assets/demo_bg.png);
+
+}
 .left-pane {
   float: left;
-  width: 50%;
+  width: 40%;
   position: relative;
 }
 
 .right-pane {
   float: right;
-  width: 50%;
+  width: 40%;
   position: relative;
 }
 
@@ -85,12 +89,19 @@ html * {
 	height: auto;
 }
 .hvrbox img {
+  border-style: solid;
+    border-width: 6px;
+  border-radius: 50px;
 	max-width: 100%;
 }
+border-radius: 50px;
 .hvrbox .hvrbox-layer_bottom {
 	display: block;
 }
 .hvrbox .hvrbox-layer_top {
+  border-style: solid;
+  border-width: 6px;
+  border-radius: 50px;
 	opacity: 0;
 	position: absolute;
 	top: 0;
@@ -107,14 +118,15 @@ html * {
 	-ms-transition: all 0.4s ease-in-out 0s;
 	transition: all 0.4s ease-in-out 0s;
 }
+
 .hvrbox:hover .hvrbox-layer_top,
 .hvrbox.active .hvrbox-layer_top {
 	opacity: 1;
-  /* -webkit-filter: blur(5px); */
+
 }
 .hvrbox .hvrbox-text {
 	text-align: center;
-	font-size: 18px;
+	font-size: 1.5em;
 	display: inline-block;
 	position: absolute;
 	top: 50%;
