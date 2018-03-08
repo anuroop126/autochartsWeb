@@ -1,4 +1,4 @@
-cmdbody {
+body {
   background-size: 100%;
   background-image: url(../static/assets/demo_bg.png);
   background-attachment: fixed;
@@ -7,14 +7,14 @@ cmdbody {
 }
 
 .login .pane {
-  text-align: center;
+  text-align: left;
   background-color: rgba(1, 1, 24, 0.7);
   top: 0;
   left: 0;
   bottom: 20;
   right: 0;
   width: fill;
-  height: 300px;
+  /* height: 300px; */
   overflow-y: hidden;
   padding: 22px 32px;
   -moz-border-radius: 8px;
@@ -62,6 +62,9 @@ cmdbody {
   float: left;
   /*position: absolute;*/
   width: 20%;
+}
+.bar-svg a img{
+  height: 20%;
 }
 
 .login .misc {

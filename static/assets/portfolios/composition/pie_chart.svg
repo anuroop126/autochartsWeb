@@ -7,9 +7,9 @@
 	<!-- <circle fill="#2980DE" cx="65" cy="65" r="64"/> -->
 	<g>
 		<circle fill="#FFFFFF" cx="65" cy="63.804" r="38"/>
-		<line fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" x1="64.232" y1="66.1" x2="64.232" y2="21.311"/>
-		<line fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" x1="64.232" y1="66.1" x2="94.665" y2="96.535"/>
-		<line fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" x1="64.232" y1="66.1" x2="89.882" y2="32.03"/>
+		<line fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" x1="64.232" y1="66.1" x2="64.232" y2="25.804"/>
+		<line fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" x1="64.232" y1="66.1" x2="83.665" y2="96.535"/>
+		<line fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" x1="64.232" y1="66.1" x2="84.882" y2="32.03"/>
 	</g>
 </g>
 </svg>
