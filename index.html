@@ -1,42 +1,222 @@
-<!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="static/style.css" />
+<!DOCTYPE HTML>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>feather io</title>
+	<title>Feather IO</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="blog/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="blog/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="blog/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="blog/assets/css/ie8.css" /><![endif]-->
 </head>
 
-<body class="index-body">
-  <div class="top-band main-title">
-    FEATHER IO
-  </div>
-  <div class="home">
-    <div class="left-pane">
-      <div class="hvrbox">
-        <img width="100%" src="static/assets/start_using.gif" />
-        <div class="hvrbox-layer_top">
-          <div class="hvrbox-text">
-            Learn more about vizualizations and how to create them. Besides, you can know the correct visualization for correct data. Usage of D3 effectively and browse the various options available.
-            <br />
-            <a href='more.html'>know more..</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="right-pane">
-      <div class="hvrbox">
-        <img width="100%" src="static/assets/start_using2.gif" />
-        <div class="hvrbox-layer_top">
-          <div class="hvrbox-text">
-            The only opensource library for quick visualizations to use in your website. This will work on the simple idea of "plug and play".
-            <br /> introducing <a href="autocharts.html">autocharts..</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<body>
+
+	<!-- Sidebar -->
+	<section id="sidebar">
+		<div class="inner">
+			<nav>
+				<ul>
+					<li><a href="#intro">Welcome</a></li>
+					<li><a href="#one">Who we are</a></li>
+					<li><a href="#two">What we do</a></li>
+					<li><a href="#three">Get in touch</a></li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Intro -->
+		<section id="intro" class="wrapper fullscreen fade-up">
+			<svg width="1210" height="700"></svg>
+			<div class="inner float-up ">
+				<h4>"hommepage visualization  inspired from Voronoi diagram"</h4>
+				<h1>feather IO</h1>
+				<ul class="actions">
+					<!-- <li><a href="#one" class="button scrolly">Learn more</a></li> -->
+					<li class="tooltip">
+						<span class="tooltiptext">show blog..</span>
+						<a href="#"><img class="cust-button button scrolly" src="static/assets/blog.svg" /></a>
+					</li>
+					<li class="tooltip">
+						<a href="templates/demo_page.html"><img class="cust-button button scrolly" src="static/assets/start.svg" /></a>
+						<span class="tooltiptext">show chart catalogue..</span>
+					</li>
+					<li class="tooltip">
+						<span class="tooltiptext">show collection..</span>
+						<a href="samples/literacy_rate.html"><img class="cust-button button scrolly" src="static/assets/origami.svg" /></a>
+					</li>
+
+				</ul>
+			</div>
+		</section>
+
+		<!-- One -->
+		<section id="one" class="wrapper spotlights">
+			<section>
+				<img class="image" src="static/assets/autocharts.gif" alt="" data-position="center center" />
+				<div class="content">
+					<div class="inner">
+						<h2>blogger..</h2>
+						<p>Majority of blogs move around practical approaches and experiences in coding. It may be a framework, library or tutorial for the same. </p>
+						<ul class="actions">
+							<li class="tooltip">
+								<span class="tooltiptext">show blog..</span>
+									<a href="#"><img class="cust-button button scrolly" src="static/assets/blog.svg" /></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section>
+				<img class="image" src="static/assets/start_using.gif" alt="" data-position="top center" />
+				<div class="content">
+					<div class="inner">
+						<h2>designer..</h2>
+						<p>Experiment various designs to explain and reflect patterns and meaning in data. Only condition is the code should be optimal.</p>
+						<ul class="actions">
+							<li class="tooltip">
+								<span class="tooltiptext">show collection..</span>
+								<a href="samples/literacy_rate.html"><img class="cust-button button scrolly" src="static/assets/origami.svg" /></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section>
+				<img class="image" src="static/assets/start_using2.gif" alt="" data-position="25% 25%" />
+				<div class="content">
+					<div class="inner">
+						<h2>visualiser..</h2>
+						<p>Experiment various libraries to create visuals and reccomend best library among them. Now I am working on d3js. And, there is best library for three dimensional rendering, i.e three.js. Follow my blogs to updated with such information.</p>
+						<ul class="actions">
+							<li class="tooltip">
+								<a href="templates/demo_page.html"><img class="cust-button button scrolly" src="static/assets/start.svg" /></a>
+								<span class="tooltiptext">show chart catalogue..</span>
+							</li>						</ul>
+					</div>
+				</div>
+			</section>
+		</section>
+
+		<!-- Two -->
+		<section id="two" class="wrapper fade-up">
+			<div class="inner">
+				<h2>What we do</h2>
+				<p>After seeing more generic statements above, let's have a detailed explanation on the real purpose of <b>feather io</b></p>
+				<div class="features">
+					<section>
+						<span class="icon major fa-flask"></span>
+						<h3>Experiment and learn</h3>
+						<p>There are enormous libraries around you. It may be in python, java or javascript. Here, we try to experiment libraries from python and javascript mostly and share our experience in our articles.</p>
+					</section>
+					<section>
+						<span class="icon major fa-life-ring"></span>
+						<h3>Using what we learnt cleverly</h3>
+						<p>In our journey through coding, you might have learnt various ways and solution to solve a problem. Consolidating them at one place where it might help others and save a lot of time.</p>
+					</section>
+					<section>
+						<span class="icon major fa-eye"></span>
+						<h3>Observe and respond to patterns</h3>
+						<p>Observing data and pattrns is extremly important. By doing so, you can exactly get the right graph or visual to explain them.</p>
+					</section>
+					<section>
+						<span class="icon major fa-coffee"></span>
+						<h3>Creation</h3>
+						<p>We may not create a new basic shape, but we do combine basic shapes and create a tough and rarw combo that illustrate the best than any other. As you see, we can combine nightingale rose chart and pie chart we can make a wonderful visualization which is both descriptive and comparative.</p>
+					</section>
+					<section>
+						<span class="icon major fa-chain"></span>
+						<h3>Analyze</h3>
+						<p>Analyze the problem and suggesting solution. Few traits of solution are: elegant, sophisticated, optimal and importantly future proof.  </p>
+					</section>
+					<section>
+						<span class="icon major fa-diamond"></span>
+						<h3>Knowledge base</h3>
+						<p>Collecting Knowledge in various aspects. The whole website around javascript libraries and sometimes python libraries. We can include more up on request..</p>
+					</section>
+				</div>
+			</div>
+		</section>
+
+		<!-- Three -->
+		<section id="three" class="wrapper fade-up">
+			<div class="inner">
+				<h2>Get in touch</h2>
+				<p>We are ready to consume your feedback or reuests. </p>
+				<div class="split style1">
+					<!-- <section>
+						<form method="post" action="#">
+							<div class="field half first">
+								<label for="name">Name</label>
+								<input type="text" name="name" id="name" />
+							</div>
+							<div class="field half">
+								<label for="email">Email</label>
+								<input type="text" name="email" id="email" />
+							</div>
+							<div class="field">
+								<label for="message">Message</label>
+								<textarea name="message" id="message" rows="5"></textarea>
+							</div>
+							<ul class="actions">
+								<li><a href="" class="button submit">Send Message</a></li>
+							</ul>
+						</form>
+					</section> -->
+					<section>
+						<ul class="contact">
+							<li>
+								<h3>Address</h3>
+								<span>feather io<br />
+											c/o Anuroop Pendela<br />
+											India</span>
+							</li>
+							<li>
+								<h3>Email</h3>
+								<a href="#">featherio.in@gmail.com</a>
+							</li>
+							<li>
+								<h3>Phone</h3>
+								<span>+91 8500339965</span>
+							</li>
+							<li>
+								<h3>Social</h3>
+								<ul class="icons">
+									<li onclick="myFunction('tweet')"><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
+									<li onclick="myFunction('create story')"><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
+									<li onclick="myFunction('get forked')"><a href="#" class="fa-github"><span class="label">GitHub</span></a></li>
+									<li onclick="myFunction('create a feed')"><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
+									<li onclick="myFunction('to hire one')"><a href="#" class="fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+				</div>
+			</div>
+		</section>
+
+	</div>
+	<div id="snackbar"></div>
+
+	<!-- Scripts -->
+	<script src="blog/assets/js/jquery.min.js"></script>
+	<script src="blog/assets/js/jquery.scrollex.min.js"></script>
+	<script src="blog/assets/js/jquery.scrolly.min.js"></script>
+	<script src="blog/assets/js/skel.min.js"></script>
+	<script src="blog/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="blog/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="blog/assets/js/main.js"></script>
+	<script src="blog/assets/js/visualize.js"></script>
+
 </body>
 
 </html>
