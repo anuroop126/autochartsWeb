@@ -1,0 +1,9 @@
+- Add Classes to objectify the chart
+- Add local data provision
+- Add tooltip on request
+- Add auxillary data
+- Add Linkers(Least priority)
+- Make the bar data individuval
+- Preserve Animations
+- Make vertical as well
+- Change Data Format as well

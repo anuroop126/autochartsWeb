@@ -1,0 +1,5 @@
+- Add Classes to objectify the chart
+- Add local data provision
+- Add tooltip on request
+- Add auxillary data if required. This will help for explaining the chart more elaborated.
+- Add Linkers(Least priority)

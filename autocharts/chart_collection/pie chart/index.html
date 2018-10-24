@@ -1,0 +1,29 @@
+<html>
+<body>
+  <script>
+    window.addEventListener('resize', function (event) {
+      $("#chart").width(window.innerWidth * 0.9);
+      $("#chart").height(window.innerHeight);
+    });
+  </script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="pieChart.js"></script>
+<div id="chart" style="width: 900;height: 500">
+</div>
+<script>
+
+var data=[{  city:"Deesa",  beautifulRatio:30},{  city:"Patan",  beautifulRatio:20},{  city:"Ahmedabad",  beautifulRatio:15},{  city:"Bhabhar",  beautifulRatio:35},{  city:"BHakhasar",  beautifulRatio:50}];
+    $("#chart").empty();
+    var pieChartConfig = {
+    mainDiv: "#chart",
+    colorRange: ["#f44842", "#f4b841", "#f4f141", "#46f441", "#41f4d9", "#4941f4", "#f441d6"],
+    data: data,
+    caption:"city",
+    tooltipLable:"City",
+    value:"beautifulRatio"
+  };
+  var pieChart = new pieChart(pieChartConfig);
+</script>
+</body>
+</html>
