@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<title>autoCharts</title>
+	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<link rel="stylesheet" href="../static/normalize.css">
+	<link rel="stylesheet" href="../static/layout.css">
+
+
+	<!--[if lt IE 9]>
+		<script src="../https://html5shim.googlecode.com/svn/trunk/html5.js"></script>a
+	<![endif]-->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../static/scripts/jquery.mixitup.min.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+
+			var filterList = {
+
+				init: function() {
+
+					// MixItUp plugin
+					// http://mixitup.io
+					$('#portfoliolist').mixItUp({
+						selectors: {
+							target: '.portfolio',
+							filter: '.filter'
+						},
+						load: {
+							filter: '.comparison'
+						}
+					});
+
+				}
+
+			};
+
+			// Run the show!
+			filterList.init();
+
+
+		});
+	</script>
+
+</head>
+
+<body>
+
+	<div class="container">
+
+		<ul id="filters" class="clearfix">
+			<li><a href="../index.html"><img class="home-img" src="../static/assets/home.svg" /></a></li>
+			<li><span class="filter" data-filter=".composition, .comparison, .distribution, .relationship">All</span></li>
+			<li><span class="filter" data-filter=".composition">Composition</span></li>
+			<li><span class="filter" data-filter=".comparison">Comparison</span></li>
+			<li><span class="filter" data-filter=".distribution">Distribution</span></li>
+			<li><span class="filter" data-filter=".relationship">Relationship</span></li>
+			<!-- <li><span class="filter" data-filter=".hybrid">Hybrid</span></li> -->
+
+			<li id="desc">A composition tries to collect different types of information that make up a whole and display them together, like the search terms that those visitors used to land on your site, or how many of them came from links, search engines, or direct traffic.</li>
+		</ul>
+		<script>
+			$(".filter").click(function(event) {
+				var option = event.target.innerHTML;
+				if (option == "Composition") {
+					$("#desc").text(
+						"A composition tries to collect different types of information that make up a whole and display them together, like the search terms that those visitors used to land on your site, or how many of them came from links, search engines, or direct traffic."
+					)
+				} else if (option == "Comparison") {
+					$("#desc").text("A comparison tries to set one set of variables apart from another, and display how those two variables interact, like the number of visitors to five competing web sites in a single month.")
+				} else if (option == "Distribution") {
+					$("#desc").text(
+						"A distribution tries to lay out a collection of related or unrelated information simple to see how it correlates, if at all, and to understand if there’s any interaction between the variables, like the number of bugs reported during each month of a beta."
+					)
+				} else if (option == "Relationship") {
+					$("#desc").text("A relationship tries to show a connection or correlation between two or more variables through the data presented, like the market cap of a given stock over time versus overall market trend.")
+				} else if (option == "All") {
+					$("#desc").text("")
+				}
+
+			})
+		</script>
+
+		<div id="portfoliolist">
+
+
+			<div class="portfolio composition" data-cat="composition">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/composition/stacked_area_graph.svg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Stacked area graph</a>
+							<!-- <span class="text-category">APP</span> -->
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio composition" data-cat="composition">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/composition/marimekko_chart.svg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Stacked 100% bar graph</a>
+							<!-- <span class="text-category">APP</span> -->
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio hybrid" data-cat="hybrid">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/hybrid/4.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Sonor's Design</a>
+							<span class="text-category">hybrid design</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<a href="bar_chart.html">
+				<div class="portfolio comparison" data-cat="comparison">
+					<div class="portfolio-wrapper">
+						<img src="../static/assets/portfolios/comparison/bar_graph.svg" alt="" />
+						<div class="label">
+							<div class="label-text">
+								<a class="text-title">Bar graph</a>
+								<!-- <span class="text-category">Bar graph</span> -->
+							</div>
+							<div class="label-bg"></div>
+						</div>
+					</div>
+				</div>
+			</a>
+			<div class="portfolio comparison" data-cat="comparison">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/comparison/area_graph.svg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Area graph</a>
+							<!-- <span class="text-category">Bar graph</span> -->
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio comparison" data-cat="comparison">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/comparison/bullet_chart.svg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Bullet graph</a>
+							<!-- <span class="text-category">Bar graph</span> -->
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio comparison" data-cat="comparison">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/comparison/nightingale_rose_chart.svg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Nightingale rose chart</a>
+							<!-- <span class="text-category">Bar graph</span> -->
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio comparison distribution" data-cat="comparison distribution">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/comparison/population_pyramid.svg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Pyramid graph</a>
+							<!-- <span class="text-category">Bar graph</span> -->
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio comparison" data-cat="comparison">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/comparison/radial_bar_chart.svg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Radial bar graph</a>
+							<!-- <span class="text-category">Bar graph</span> -->
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio comparison" data-cat="comparison">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/comparison/radar_chart.svg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Circular area chart</a>
+							<!-- <span class="text-category">Bar graph</span> -->
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio composition" data-cat="composition">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/composition/donut_chart.svg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Donut chart</a>
+							<!-- <span class="text-category">APP</span> -->
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+			<div class="portfolio composition" data-cat="composition">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/composition/stacked_bar_graph.svg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Stacked bar graph</a>
+							<!-- <span class="text-category">APP</span> -->
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio comparison" data-cat="comparison">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/comparison/column_graph.svg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Column graph</a>
+							<!-- <span class="text-category">Business comparison</span> -->
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio comparison" data-cat="comparison">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/comparison/line_graph.svg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Line graph</a>
+							<!-- <span class="text-category">Business comparison</span> -->
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio composition" data-cat="composition">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/composition/pie_chart.svg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Pie chart</a>
+							<!-- <span class="text-category">APP</span> -->
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio distribution" data-cat="distribution">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/distribution/histogram.svg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Histogram</a>
+							<!-- <span class="text-category">Icon</span> -->
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio hybrid" data-cat="hybrid">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/hybrid/3.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Backend Admin</a>
+							<span class="text-category">hybrid design</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- <div class="portfolio distribution" data-cat="distribution">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/distribution/scatterplot.svg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Scatterplot</a>
+						<span class="text-category">Icon</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div> -->
+
+			<div class="portfolio hybrid" data-cat="hybrid">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/hybrid/2.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Student Guide</a>
+							<span class="text-category">hybrid design</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio hybrid" data-cat="hybrid">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/hybrid/1.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Note</a>
+							<span class="text-category">hybrid design</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio relationship" data-cat="relationship">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/relationship/bubble_chart.svg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Bubble chart</a>
+							<!-- <span class="text-category">relationship</span> -->
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio relationship" data-cat="relationship">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/relationship/bubble_map.svg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Bubble map</a>
+							<!-- <span class="text-category">relationship</span> -->
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio relationship distribution" data-cat="relationship distribution">
+				<div class="portfolio-wrapper">
+					<img src="../static/assets/portfolios/relationship/scatterplot.svg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Scatterplot</a>
+							<!-- <span class="text-category">relationship</span> -->
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+	</div>
+	<!-- container -->
+
+</body>
+
+</html>
